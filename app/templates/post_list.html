@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Post List</title>
+{% endblock head %}
+
+{% block body %}
+
+    <div class='m-3'>
+    
+    <h1>Last Posts</h1><br><br>
+
+    <!--Posts-->
+    {% for post in object_list %}
+        <h2>{{ post.title }}</h2><br>
+        <b>{{ post.author }}</b><br>
+        <small>{{ post.email }} / {{ post.date }}</small>
+        <br><br>
+        <p>{{ post.content|linebreaks }}</p> <!--Linebreak-->
+        <br>
+        <a href="/post/update/{{ post.id }}"><button class='btn btn-primary'>Edit</button></a>
+        <a href="/post/delete/{{ post.id }}"><button class='btn btn-danger'>Delete</button></a>
+        <br><br><br><br>
+    {% endfor %}    
+    
+    </div>
+
+{% endblock body %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block head %}
+    <title>Edit Post</title>
+{% endblock head %}
+
+{% block body %}
+    <div class='ml-2'>
+
+        <!--Form-->
+        <form method='POST'>
+                {% csrf_token %}
+                <label>Title:</label><br>
+                {{ form.title }} <br><br>
+                <label>Author:</label><br>
+                {{ form.author }} <br><br>
+                <label>E-mail:</label><br>
+                {{ form.email }} <br><br>
+                <label>Content:</label><br>
+                {{ form.content }} <br><br>
+                <button type="submit" class='btn btn-primary'>Edit Post</button>
+        </form>
+        
+    </div>
+
+{% endblock body %}

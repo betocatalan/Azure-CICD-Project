@@ -1,0 +1,46 @@
+name: Django app
+
+on:
+  push:
+    branches: [ master ] 
+  
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8 pytest
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        
+    - name: Test
+      run: |
+        cd tests
+        python3 -m unittest test_app.py
+    - name: Build and Push in Docker Hub
+      uses: mr-smithers-excellent/docker-build-push@v4
+      with:
+        image: cataluniat1/python-django-pipeline
+        tag: latest
+        registry: docker.io
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+    - name: Connect to ssh and pull docker image
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.KEY }}
+        script: |
+          sudo docker pull cataluniat1/python-django-pipeline:latest
+          sudo mkdir 1
+          sudo docker-compose -f /home/ubuntu/app/docker-compose.yml up -d
