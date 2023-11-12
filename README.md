@@ -23,11 +23,14 @@ Test the code, build a Docker image, push to Docker Repo and deploy on a Azure V
 ### Step 4: Specify Service Principal Credentials in Environment Variables
 Edit ~/.bashrc and add:
 
-```export ARM_SUBSCRIPTION_ID="<azure_subscription_id>"
+```
+export ARM_SUBSCRIPTION_ID="<azure_subscription_id>"
 export ARM_TENANT_ID="<azure_subscription_tenant_id>"
 export ARM_CLIENT_ID="<service_principal_appid>"
-export ARM_CLIENT_SECRET="<service_principal_password>"```
-Execute source ```~/.bashrc``` or ```~/.bashrc``` ```
+export ARM_CLIENT_SECRET="<service_principal_password>"
+```
+Execute source ```~/.bashrc``` or ```~/.bashrc``` 
+
 
 By following these steps, you authenticate, set the subscription, create a service principal, and configure environment variables for Azure, particularly useful for automation with tools like Terraform.
 
