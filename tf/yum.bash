@@ -7,7 +7,7 @@ mkdir app
 echo "version: '3.3'
 services:
   python-api:
-    image: cataluniat1/python-django-pipeline:latest
+    image: cataluniat1/django1:latest
     ports:
       - "80:80"
     restart: always
