@@ -70,4 +70,4 @@ git push
 ```
 
 ## Authors
-* **Carlos Catalán** - [Github](https://github.com/catalan94)
+* **Alberto Catalàn** - [Github](https://github.com/betocatalan)
