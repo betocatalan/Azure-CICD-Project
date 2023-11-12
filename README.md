@@ -27,7 +27,7 @@ Edit ~/.bashrc and add:
 export ARM_TENANT_ID="<azure_subscription_tenant_id>"
 export ARM_CLIENT_ID="<service_principal_appid>"
 export ARM_CLIENT_SECRET="<service_principal_password>"```
-Execute source ```~/.bashrc``` or ```~/.bashrc```
+Execute source ```~/.bashrc``` or ```~/.bashrc``` ```
 
 By following these steps, you authenticate, set the subscription, create a service principal, and configure environment variables for Azure, particularly useful for automation with tools like Terraform.
 
