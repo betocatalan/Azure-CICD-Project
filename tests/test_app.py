@@ -1,4 +1,8 @@
-from app import test
+import unittest
 
-def test_app():
-    assert test() == "Conected!"
+def fun(x):
+    return x + 1
+
+class MyTest(unittest.TestCase):
+    def test(self):
+        self.assertEqual(fun(3), 4)
