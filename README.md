@@ -18,7 +18,8 @@ Test the code, build a Docker image, push to Docker Repo and deploy on a Azure V
 
 ### Step 3: Create a Service Principal
 ```export MSYS_NO_PATHCONV=1``` (for Git Bash users)
-```az ad sp create-for-rbac --name <service_principal_name> --role Contributor --scopes /subscriptions/<subscription_id> ```
+```az ad sp create-for-rbac --name "service_principal_name" --role Contributor --scopes /subscriptions/"subscription_id" ``` 
+### In subscription_id just the sub-id. no "" or () just numbers
 
 ### Step 4: Specify Service Principal Credentials in Environment Variables
 Edit ~/.bashrc and add:
