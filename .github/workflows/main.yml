@@ -48,4 +48,4 @@ jobs:
           key: ${{ secrets.KEY }}
           script: |
             sudo docker pull cataluniat1/django1:latest
-            sudo docker-compose -f /home/ubuntu/app/docker-compose.yml up -d
+            sudo docker-compose -f /home/ubuntu/docker-compose.yml up -d
