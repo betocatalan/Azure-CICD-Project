@@ -16,7 +16,7 @@ echo "version: '3.3'
 
 services:
   python-api:
-    image: cataluniat1/django1:latest
+    image: cataluniat1/cicd_image:latest
     ports:
       - "80:80"
     restart: always
